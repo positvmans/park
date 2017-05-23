@@ -9,7 +9,7 @@
 
 define('REDISPATH', realpath(__DIR__ . '/..'));
 
-require REDISPATH.'/async-swoole/Common/RedisSdk.class.php';
+require REDISPATH.'/swoole-websocket-task/Common/RedisSdk.class.php';
 $redis = new RedisSdk();
 //$redis->connect('127.0.0.1', 6379);
 $redis->set("fd", "[]");    //每次第一次执行都需要先清空reids里面的标识

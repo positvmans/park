@@ -2,7 +2,7 @@
 
 define('REDISPATH', realpath(__DIR__ . '/..'));
 
-require REDISPATH.'/async-swoole/Common/RedisSdk.class.php';
+require REDISPATH.'/swoole-websocket-task/Common/RedisSdk.class.php';
 
 $server =   new swoole_websocket_server("0.0.0.0", 9443, SWOOLE_BASE);
 $redisMessage =   new RedisSdk();
@@ -13,7 +13,7 @@ $server->set(
     [
         'worker_num' => 1,
         'task_worker_num' => 1,
-        //'daemonize' => true,
+        'daemonize' => true,
     ]);
 
 $server->on('open', function (swoole_websocket_server $_server, swoole_http_request $request) {
