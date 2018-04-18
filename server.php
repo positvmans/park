@@ -12,7 +12,7 @@ $redisMessage =   new RedisSdk();
 $server->set(
     [
         'worker_num' => 1,
-        'task_worker_num' => 1,
+        'task_worker_num' => 2,
         'daemonize' => true,
     ]);
 
